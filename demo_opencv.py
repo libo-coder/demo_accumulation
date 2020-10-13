@@ -21,6 +21,7 @@ for i in range(len(points)):
     plot(x, y, 'r')
 #####################################################################################################################
 
+
 ################################### python 用 opencv 在图像中画矩形框，加 text，并保存 ##################################
 fname = 'path/xxx.jpg'
 img = cv2.imread(fname)
@@ -33,14 +34,15 @@ cv2.putText(img, text, (50, 50), font, 1, (0, 0, 255), 1)
 cv2.imwrite('path/newname.jpg', img)
 #####################################################################################################################
 
+
 ############################################## PIL与OpenCV转换 ######################################################
 import cv2
 import numpy as np
 from PIL import Image
 
 # PIL 转 OpenCV
-cv_img = cv2.cvtColor(np.asarray(pil_img), cv2.COLOR_RGB2BGR)
+cv2_img = cv2.cvtColor(np.asarray(pil_img), cv2.COLOR_RGB2BGR)
 
 # Opencv 转 PIL
-pil_img = Image.fromarray(cv_img).convert('L')
+pil_img = Image.fromarray(cv2_img).convert('L')
 #####################################################################################################################

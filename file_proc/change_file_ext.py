@@ -37,11 +37,12 @@ def main():
     # 从命令行参数中依次解析出参数
     work_dir = args['work_dir'][0]
     print(work_dir)
+
     old_ext = args['old_ext'][0]
     if old_ext[0] != '.':
         old_ext = '.' + old_ext
-    new_ext = args['new_ext'][0]
 
+    new_ext = args['new_ext'][0]
     if new_ext[0] != '.':
         new_ext = '.' + new_ext
 
