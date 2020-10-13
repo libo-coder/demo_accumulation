@@ -1,9 +1,12 @@
 # coding=utf-8
+"""
+创建 LMDB 数据
+@author: libo
+"""
 import fire
 import os
 import lmdb
 import cv2
-import re
 import numpy as np
 
 
@@ -103,24 +106,6 @@ def createDataset(inputPath, gtFile, outputPath, checkValid=True):
     cache['num-samples'.encode()] = str(nSamples).encode()
     writeCache(env, cache)
     print('Created dataset with %d samples' % nSamples)
-
-'''
-# 排序（按图像宽度降序）
-def custom_sort(x, y):
-    # imgI = Image.open(os.path.join(imgPath, x.split(' ')[0])).convert('L')
-    # # print(imgI.size)
-    # imgJ = Image.open(os.path.join(imgPath, y.split(' ')[0])).convert('L')
-    # if imgI.size[0] < imgJ.size[0]:
-    #     return 1
-    # if imgI.size[0] > imgJ.size[0]:
-    #     return -1
-    # return 0
-    if x['width'] < y['width']:
-        return 1
-    if x['width'] > y['width']:
-        return -1   
-    return 0
-'''
 
 
 if __name__ == '__main__':
